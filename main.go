@@ -8,9 +8,10 @@ import (
 )
 
 type Config struct {
-	App      fyne.App
-	InfoLog  *log.Logger
-	ErrorLog *log.Logger
+	App        fyne.App
+	InfoLog    *log.Logger
+	ErrorLog   *log.Logger
+	MainWindow fyne.Window
 }
 
 var myApp Config
@@ -29,8 +30,11 @@ func main() {
 	//create a database repository
 
 	//create and size a fyne window
-	win := fyneApp.NewWindow("GoldWatcher")
+	myApp.MainWindow = fyneApp.NewWindow("GoldWatcher")
+	myApp.MainWindow.Resize(fyne.NewSize(300, 200))
+	myApp.MainWindow.SetFixedSize(true)
+	myApp.MainWindow.SetMaster()
 
 	//show and run the application
-	win.ShowAndRun()
+	myApp.MainWindow.ShowAndRun()
 }
