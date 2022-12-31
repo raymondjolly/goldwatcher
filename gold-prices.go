@@ -51,7 +51,7 @@ func (g *Gold) GetPrices() (*Price, error) {
 		log.Println("error unmarshalling json")
 		return nil, err
 	}
-	previous, current, change = gold.Prices[0].PreviousClose, gold.Prices[1].Price, gold.Prices[2].Change
+	previous, current, change = gold.Prices[0].PreviousClose, gold.Prices[0].Price, gold.Prices[0].Change
 	var currentInfo = Price{
 		Currency:      currency,
 		Price:         current,
