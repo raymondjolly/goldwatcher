@@ -14,7 +14,7 @@ func (app *Config) getPriceText() (*canvas.Text, *canvas.Text, *canvas.Text) {
 
 	gold, err := g.GetPrices()
 	if err != nil {
-		grey := color.RGBA{R: 155, G: 155, B: 155, A: 255}
+		grey := color.NRGBA{R: 155, G: 155, B: 155, A: 255}
 		open = canvas.NewText("Open: Unreachable", grey)
 		current = canvas.NewText("Current: Unreachable", grey)
 		change = canvas.NewText("Change: Unreachable", grey)
